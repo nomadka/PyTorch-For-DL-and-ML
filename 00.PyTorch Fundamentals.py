@@ -10,7 +10,6 @@ scalar
 scalar.ndim ##Scalar doesnt have any dimension, so the output will be 0
 
 # Vector
-
 vector = torch.tensor([7, 7])
 vector
 #Checking the dimension of vector

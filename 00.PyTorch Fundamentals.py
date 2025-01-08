@@ -63,6 +63,12 @@ ten_zeros
 
 # Tensor Data Type
 # Float 32 Tensor
-float_32_tensor = torch.tensor([3.0, 6.0, 9.0], dtype=None, device=None, requires_grad=False)
+float_32_tensor = torch.tensor([3.0, 6.0, 9.0], 
+                                dtype=None, # Data type of the tensor e.g float32, floar16 
+                                device=None, # In which device your tensor is on
+                                  requires_grad=False) # wheather or not to track gradients with this tensor operation
 float_32_tensor
 float_32_tensor.dtype
+
+float_16_tensor = float_32_tensor.type(torch.float16)
+float_16_tensor.dtype

@@ -68,7 +68,34 @@ float_32_tensor = torch.tensor([3.0, 6.0, 9.0],
                                 device=None, # In which device your tensor is on
                                   requires_grad=False) # wheather or not to track gradients with this tensor operation
 float_32_tensor
-float_32_tensor.dtype
+float_32_tensor.dtype # By default the pyTorch have float 32 datatype
 
 float_16_tensor = float_32_tensor.type(torch.float16)
 float_16_tensor.dtype
+float_16_tensor * float_32_tensor
+float_32_tensor.ndim
+int_32_tensor = torch.tensor([5,4,3], dtype=torch.int32)
+int_32_tensor.dtype
+float_32_tensor*int_32_tensor
+
+# Getting Information from Tensor
+some_tensor = torch.rand(3,4)
+some_tensor
+print(some_tensor)
+print(f"Data type of Tensor: {some_tensor.dtype}")
+print(f"Shape of Tensor: {some_tensor.shape}" )
+print(f"Device of Tensor: {some_tensor.device}")
+x_tensor = torch.ones(size=(2,3),dtype=torch.int16)
+print(x_tensor)
+print(f"Data type of Tensor: {x_tensor.dtype}")
+print(f"Shape of Tensor: {x_tensor.shape}" )
+print(f"Device of Tensor: {x_tensor.device}")
+
+##Manipulating Tensors (Tensor Operations +-*/)
+tensor = torch.tensor([1,2,3])
+tensor + 10
+tensor - 1
+tensor * 10
+tensor / 2
+torch.mul(tensor,10)
+torch.add(tensor, 5)

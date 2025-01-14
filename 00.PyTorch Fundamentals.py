@@ -93,9 +93,24 @@ print(f"Device of Tensor: {x_tensor.device}")
 
 ##Manipulating Tensors (Tensor Operations +-*/)
 tensor = torch.tensor([1,2,3])
-tensor + 10
+tensor + 10 
 tensor - 1
 tensor * 10
 tensor / 2
 torch.mul(tensor,10)
 torch.add(tensor, 5)
+
+## Matrix Multiplication (Dot Product)
+## Element-Wise Multiplication (Normal Elemen Multiplication)
+
+
+tensor
+print(tensor, "*",tensor)
+print(f"Element wise multiplication Equals: {tensor * tensor}")# Elemet-Wise Multipliction
+torch.matmul(tensor, tensor) #Matrix Multiplication 
+print(f"Matrix multiplicatin Equals: {torch.matmul(tensor,tensor)}")
+
+value = 0
+for i in range(len(tensor)):
+  value += tensor[i] * tensor[i]
+print(value)

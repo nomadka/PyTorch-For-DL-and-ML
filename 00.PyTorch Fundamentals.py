@@ -110,7 +110,30 @@ print(f"Element wise multiplication Equals: {tensor * tensor}")# Elemet-Wise Mul
 torch.matmul(tensor, tensor) #Matrix Multiplication 
 print(f"Matrix multiplicatin Equals: {torch.matmul(tensor,tensor)}")
 
+# Algorithm behind matmul(@)
 value = 0
 for i in range(len(tensor)):
   value += tensor[i] * tensor[i]
 print(value)
+
+#Shapes for matrix multiplication
+tensor_A = torch.tensor([[1,2],
+                         [3,4],
+                         [5,6]])
+
+tensor_B = torch.tensor([[7,10],
+                         [8,11],
+                         [9,12]])
+tensor_A.shape
+tensor_B.shape
+
+# Here as the shape is same we are going to use transpose
+# Transpose switches dimension of a tensor
+tensor_B.T # Transposes the tensor
+tensor_B.T.shape
+print(f"Original shapes : tensor_A ={tensor_A.shape}, tensor_B = {tensor_B.shape}")
+print(f"Transposed Shapes : tensor_A ={tensor_A.T.shape}, tensor_B = {tensor_B.T.shape}")
+print(f"\nMultiplying : {tensor_A.shape @ tensor_B.T.shape} <- Inner dimension must match")
+print(f"\nOutput : {torch.matmul(tensor_A, tensor_B.T)}" )
+print(f"\nOutput Shape : {torch.matmul(tensor_A, tensor_B.T).shape}") 
+torch.mm(tensor_A, tensor_B.T) # torch.mm is an alias for torch.matmul
